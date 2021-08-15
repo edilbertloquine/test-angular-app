@@ -1,0 +1,20 @@
+<main>
+  <div class="container-fluid py-5">
+    <div class="row py-5">
+      <div id="title" class="col text-center">
+        <h1>Customers</h1>
+      </div>
+    </div>
+    <div class="row py-5">
+      <div id="customer" class="col text-center py-4 customer-container">
+        <h1>Welcome </h1>
+        <div class="row justify-content-center">
+          <app-customer
+            [customer]="customer"
+          ></app-customer>
+        </div>
+      </div>
+    </div>
+    <app-customer-list></app-customer-list>
+  </div>
+</main>

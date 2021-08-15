@@ -1,0 +1,14 @@
+<ng-template #template>
+  <div class="col-3 customer-card p-3">
+    <div class="card pb-5">
+      <img [src]="customer.gender === 'male' ? 'assets/images/male.jpeg' : 'assets/images/female.jpeg'" class="card-img-top" alt="...">
+      <div class="card-body pb-2">
+        <h5 class="card-title">{{ customer.firstName | uppercase }} {{ customer.lastName | uppercase }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ customer.email }}</h6>
+        <span class="card-text">{{ customer.username | appendCompany:'company' }}</span><br>
+        <span class="card-text">Tier: {{ customer.tier }}</span><br>
+        <span>{{ customer.createdAt | date:'MMMM d, y' }}</span>
+      </div>
+    </div>
+  </div>
+</ng-template>

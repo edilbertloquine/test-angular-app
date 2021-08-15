@@ -1,0 +1,12 @@
+<div class="row px-5">
+  <div id="customers" class="col px-5 text-center">
+    <div class="row px-5 justify-content-center">
+      <app-customer
+        *ngFor="let customer of customers; let i = index"
+        [customer]="customer"
+        [index]="i"
+        style="display: none;"
+      ></app-customer>
+    </div>
+  </div>
+</div>
