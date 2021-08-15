@@ -3,11 +3,24 @@
     <div class="card pb-5">
       <img [src]="customer.gender === 'male' ? 'assets/images/male.jpeg' : 'assets/images/female.jpeg'" class="card-img-top" alt="...">
       <div class="card-body pb-2">
-        <h5 class="card-title">{{ customer.firstName | uppercase }} {{ customer.lastName | uppercase }}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{ customer.email }}</h6>
-        <span class="card-text">{{ customer.username | appendCompany:'company' }}</span><br>
-        <span class="card-text">Tier: {{ customer.tier }}</span><br>
-        <span>{{ customer.createdAt | date:'MMMM d, y' }}</span>
+        <div *ngIf="(customer.firstName && customer.lastName); else usernameOnly">
+          <h5 class="card-title">{{ customer.firstName | uppercase }} {{ customer.lastName | uppercase }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ customer.email }}</h6>
+        </div>
+        <ng-template #usernameOnly>
+          <h5>{{ customer.email }}</h5>
+        </ng-template>
+        <table class="w-100">
+          <tr>
+            <td>{{ customer.username | appendCompany:'company' }}</td>
+          </tr>
+          <tr>
+            <td>{{ customer.tier }}</td>
+          </tr>
+          <tr>
+            <td>{{ customer.createdAt | date:'MMMM d, y' }}</td>
+          </tr>
+        </table>
       </div>
     </div>
   </div>
