@@ -39,11 +39,11 @@ export class CustomerService {
     return this.customers[this.customers.length - 1]
   }
 
-  getCustomers (){
+  getCustomers (): Customer[] {
     return this.customers.slice(0, -1)
   }
 
-  addCustomer (customer: Customer) {
+  addCustomer (customer: Customer): void {
     this.customers.push(customer)
   }
 }
